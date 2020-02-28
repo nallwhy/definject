@@ -3,7 +3,7 @@ Functional Dependency Injection in Elixir
 
 ## Installation
 
-The package can be installed by adding `jason` to your list of dependencies
+The package can be installed by adding `definject` to your list of dependencies
 in `mix.exs`:
 
 ```elixir
