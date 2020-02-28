@@ -54,8 +54,8 @@ defmodule Inject do
 
   ### strict: false
 
-  `definject` raises if the injected map includes function which is not dependency of the function.
-  You can disable this check by adding `strict: false`.
+  `definject` raises if the passed map includes function which is not dependency of the injected function.
+  You can disable this check by adding strict: false.
 
       Accounts.send_welcome_email(100, %{
         {Repo, :get, 2} => fn User, 100 -> %User{email: "mr.jechol@gmail.com"} end,
