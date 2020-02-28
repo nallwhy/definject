@@ -1,5 +1,5 @@
 ## DefInject
-> Dependency Injection in Functional Way
+Functional Dependency Injection in Elixir
 
 ## Installation
 
@@ -16,7 +16,7 @@ end
 
 ### `definject`
 
-`definject` transforms function to accecpt a map where we can inject dependent functions.
+`definject` transforms function to accept a map where we can inject dependent functions.
 
 ```elixir
 use Inject
@@ -71,7 +71,7 @@ test "send_welcome_email with mock/1" do
 end
 ```
 
-Note that `Process.send(self(), :email_sent)` is surrounded by `fn _ -> <HERE> end`.
+Note that `Process.send(self(), :email_sent)` is surrounded by `fn _ -> end`.
 
 ### `strict: false`
 
@@ -83,7 +83,7 @@ test "send_welcome_email with strict: false" do
   Accounts.send_welcome_email(100, %{
     {Repo, :get, 2} => fn User, 100 -> %User{email: "mr.jechol@gmail.com"} end,
     {Repo, :all, 1} => fn _ -> [%User{email: "mr.jechol@gmail.com"}] end,
-    strict: false,
+    :strict => false,
   })
 end
 ```

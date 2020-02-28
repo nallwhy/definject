@@ -52,13 +52,15 @@ defmodule Inject do
         assert_receive :email_sent
       end
 
+  ### strict: false
+
   `definject` raises if the injected map includes function which is not dependency of the function.
   You can disable this check by adding `strict: false`.
 
       Accounts.send_welcome_email(100, %{
         {Repo, :get, 2} => fn User, 100 -> %User{email: "mr.jechol@gmail.com"} end,
         {Repo, :all, 1} => fn _ -> [%User{email: "mr.jechol@gmail.com"}] end,
-        strict: false,
+        :strict => false,
       })
 
   """
