@@ -55,7 +55,7 @@ end
 ```
 
 ### `mock`
-If you don't need pattern matching in mock function, `mock/1` is handy to reduce boilerplates.
+If you are not interested in arguments of mock function, `mock/1` is handy to reduce boilerplates.
 
 ```elixir
 test "send_welcome_email with mock/1" do
@@ -94,3 +94,7 @@ end
 2. definject enables mocking per functions so that only need to mock necessary functions.
 3. Unlike other mocking libraries which modifies global modules and disables async tests, 
   definject doesn't modify global modules and enables async tests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
